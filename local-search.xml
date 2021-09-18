@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>坚果Pro3_Magisk_root教程</title>
+    <link href="/2021/09/18/%E5%9D%9A%E6%9E%9CPro3-Magisk-root%E6%95%99%E7%A8%8B/"/>
+    <url>/2021/09/18/%E5%9D%9A%E6%9E%9CPro3-Magisk-root%E6%95%99%E7%A8%8B/</url>
+    
+    <content type="html"><![CDATA[<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p><strong>需要降级为下方链接中的系统版本，如果不刷机下面可能无法操作</strong></p><p><strong>刷机包版本为7.2没有全面屏动画，一步横屏，桌面光影</strong></p><h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><strong>刷机包地址</strong>：<a href="https://smartisan-ota.oss-cn-beijing.aliyuncs.com/ota/mol.delta-rom-7.0.0-SEKSA.delta-user/201911190615/7.2.0-201911190108-user-dlt-fab3f7b929-root.zip">7.2刷机包</a></p><p><strong>一键root包文件下载</strong>:<a href="https://wwr.lanzoui.com/iv5wdu66dje">坚果Pro3_root.zip - 蓝奏云</a></p><h2 id="开始操作"><a href="#开始操作" class="headerlink" title="开始操作"></a>开始操作</h2><p>手机连接到电脑上，开启usb调试,解压下载的一键root包解压然后运行 一键安装root面具.bat</p><p><img src="https://i.loli.net/2021/09/18/HBcQfoFignYRl7D.png" srcset="/img/loading.gif" lazyload></p><p>界面和我的差不多就说明成功了</p><p><img src="https://i.loli.net/2021/09/18/TRZpY5ylLNHKcuB.png" srcset="/img/loading.gif" lazyload></p><p>然后发现手机多了两个应用</p><p>一个magisk 一个magiskenabler</p><p><img src="https://i.loli.net/2021/09/18/LI3XS6gCiE7vYzs.jpg" srcset="/img/loading.gif" lazyload></p><p>需要给magiskenabler开机自启权限和存储权限</p><p><img src="https://i.loli.net/2021/09/18/zXFKZp1LUVdIqeM.jpg" srcset="/img/loading.gif" lazyload></p><p>打开MagiskEnabler设置开机启动</p><p><img src="https://i.loli.net/2021/09/18/kG7eLFyX6EHKpVO.jpg" srcset="/img/loading.gif" lazyload></p><p>保存完后运行，我这个可能跟你们不一样，因为我已经运行过了</p><p><img src="https://i.loli.net/2021/09/18/j7B6qGF1lQhHDeO.jpg" srcset="/img/loading.gif" lazyload></p><p>已经获取root了，重启后也不会掉，如果没有请检查自动启动</p><p><img src="https://i.loli.net/2021/09/18/ZcYn2oeFDbiUgzL.jpg" srcset="/img/loading.gif" lazyload></p><h2 id="出错"><a href="#出错" class="headerlink" title="出错"></a>出错</h2><p>如果提示这样错误，你没有开存储权限</p><p><img src="https://i.loli.net/2021/09/18/EdMOzLZKagtwIWf.jpg" srcset="/img/loading.gif" lazyload></p><p>如果开机没启动，等一会，如果还是没有请检查自启权限是否给了</p><h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><p><strong>不要升级Magisk，只能修改system分区，模块若有问题请尝试热重启</strong></p><p><strong>本教程完全免费,转载请注明出处，root不是很完美，介意不强迫刷</strong></p><h2 id="教程参考"><a href="#教程参考" class="headerlink" title="教程参考"></a>教程参考</h2><p><a href="https://forum.xda-developers.com/t/amazing-temp-root-for-mediatek-armv8-2020-08-24.3922213/page-50#post-82081703">https://forum.xda-developers.com/t/amazing-temp-root-for-mediatek-armv8-2020-08-24.3922213/page-50#post-82081703</a><br><a href="https://www.coolapk.com/feed/24833705?shareKey=YTMwODU5OWQyNjQyNjE0M2U3YTk">https://www.coolapk.com/feed/24833705?shareKey=YTMwODU5OWQyNjQyNjE0M2U3YTk</a>~</p><h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><p><a href="https://www.coolapk.com/u/%E6%97%A0%E6%95%8C%E6%88%98%E7%A5%9E%E9%A2%86%E4%B8%BB">@无敌战神领主 </a>开发工具包和app</p><p><a href="https://www.coolapk.com/u/WWDC2021">@WWDC2021</a></p><p>@lly</p><h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>这个教程目前是全网首发，我在网上没有看到过任何跟坚果pro3root相关教程<br>在这之前我一直期望能够解锁bl刷机几乎每天都在看谁出了什么教程<br>一开始呢我看到酷安上有人发root截图，当然是钓鱼<br>于是呢我也发了一张，加上我也刷过上面那个包，还用改了开机动画</p><p>然后<a href="https://www.coolapk.com/u/WWDC2021">@WWDC2021</a>就找我，以为那个包泄露了，我们俩就共同探讨，就root成功了，再加上我去请教<a href="https://www.coolapk.com/u/%E6%97%A0%E6%95%8C%E6%88%98%E7%A5%9E%E9%A2%86%E4%B8%BB">@无敌战神领主 </a>，慢慢的教程变得更简单方便了。<br><img src="https://i.loli.net/2021/09/18/lgHWXfCZztRISrs.jpg" srcset="/img/loading.gif" lazyload></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>搞机</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
