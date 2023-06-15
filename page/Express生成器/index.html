@@ -17,26 +17,26 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://sudo0m.github.io/page/用多列布局实现瀑布流效果/"/>
+    <link rel="canonical" href="https://sudo0m.github.io/page/express生成器/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="我们通常使用CSS Grid Layout和Flexbox等布局方式的情况下，经常忽略另一种布局方法 - “CSS Columns”">
+        <meta name="description" content="Express 生成器使用应用程序生成器工具 express-generator 快速创建应用程序骨架。 您可以使用 npx 命令（在 Node.js 8.2.0 中可用）运行应用程序生成器。 1$ npx express-generator  对于较早的 Node 版本，将应用程序生成器安装为全局 npm 包，然后启动它： 12$ npm install -g express-generator">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用多列布局实现瀑布流效果">
-<meta property="og:url" content="https://sudo0m.github.io/page/%E7%94%A8%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E7%80%91%E5%B8%83%E6%B5%81%E6%95%88%E6%9E%9C/index.html">
+<meta property="og:title" content="Express 生成器">
+<meta property="og:url" content="https://sudo0m.github.io/page/Express%E7%94%9F%E6%88%90%E5%99%A8/index.html">
 <meta property="og:site_name" content="sudo0m">
-<meta property="og:description" content="我们通常使用CSS Grid Layout和Flexbox等布局方式的情况下，经常忽略另一种布局方法 - “CSS Columns”">
+<meta property="og:description" content="Express 生成器使用应用程序生成器工具 express-generator 快速创建应用程序骨架。 您可以使用 npx 命令（在 Node.js 8.2.0 中可用）运行应用程序生成器。 1$ npx express-generator  对于较早的 Node 版本，将应用程序生成器安装为全局 npm 包，然后启动它： 12$ npm install -g express-generator">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s1.ax1x.com/2023/05/25/p9H2m4A.png">
-<meta property="article:published_time" content="2023-05-25T07:19:30.000Z">
-<meta property="article:modified_time" content="2023-05-25T07:36:10.814Z">
+<meta property="article:published_time" content="2023-06-15T01:42:19.011Z">
+<meta property="article:modified_time" content="2023-06-15T01:52:48.347Z">
 <meta property="article:author" content="sudo0m">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="express">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://s1.ax1x.com/2023/05/25/p9H2m4A.png">
     
     
         <!-- Google tag (gtag.js) -->
@@ -58,7 +58,7 @@
     
     <title>
         
-            用多列布局实现瀑布流效果 -
+            Express 生成器 -
         
         sudo0m&#39;s Blog
     </title>
@@ -334,7 +334,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">用多列布局实现瀑布流效果</h1>
+                    <h1 class="article-title-regular">Express 生成器</h1>
                 </div>
             
                 
@@ -356,15 +356,15 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2023-05-25 15:19:30</span>
-        <span class="mobile">2023-05-25 15:19</span>
+        <span class="desktop">2023-06-15 09:42:19</span>
+        <span class="mobile">2023-06-15 09:42</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-05-25 15:36:10</span>
-            <span class="mobile">2023-05-25 15:36</span>
+            <span class="desktop">2023-06-15 09:52:48</span>
+            <span class="mobile">2023-06-15 09:52</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -381,6 +381,14 @@
                 
                     <li>
                         | <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/node/">node</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/express/">express</a>&nbsp;
                     </li>
                 
             </ul>
@@ -403,33 +411,49 @@
             
 
             <div class="article-content markdown-body">
-                <h4 id="多列布局一些其他设置"><a href="#多列布局一些其他设置" class="headerlink" title="多列布局一些其他设置"></a>多列布局一些其他设置</h4><div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">column-count</span> // 列数</span><br><span class="line"><span class="attribute">column-gap</span> // 列间距</span><br><span class="line"><span class="attribute">break-inside</span> // 列或区块发生中断时候的表现</span><br><span class="line"><span class="comment">/**更多属性查看其他文档*/</span></span><br><span class="line"><span class="attribute">column-rule-style</span> // 样式 solid</span><br><span class="line"><span class="attribute">column-rule-width</span> // 宽度</span><br><span class="line"><span class="attribute">column-rule-color</span> // 颜色</span><br><span class="line"><span class="attribute">column-rule</span> // 列边框</span><br><span class="line"><span class="attribute">column-span</span></span><br><span class="line"><span class="attribute">column-width</span></span><br></pre></td></tr></table></figure></div>
+                <h1 id="Express-生成器"><a href="#Express-生成器" class="headerlink" title="Express 生成器"></a>Express 生成器</h1><p>使用应用程序生成器工具 <code>express-generator</code> 快速创建应用程序骨架。</p>
+<p>您可以使用 <code>npx</code> 命令（在 Node.js 8.2.0 中可用）运行应用程序生成器。</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npx express-generator</span><br></pre></td></tr></table></figure></div>
+
+<p>对于较早的 Node 版本，将应用程序生成器安装为全局 npm 包，然后启动它：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g express-generator</span><br><span class="line">$ express</span><br></pre></td></tr></table></figure></div>
+
+<p>显示带有 <code>-h</code> 选项的命令选项：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ express -h</span><br><span class="line"></span><br><span class="line">  Usage: express [options] [<span class="built_in">dir</span>]</span><br><span class="line"></span><br><span class="line">  Options:</span><br><span class="line"></span><br><span class="line">    -h, --<span class="built_in">help</span>          output usage information</span><br><span class="line">        --version       output the version number</span><br><span class="line">    -e, --ejs           add ejs engine support</span><br><span class="line">        --hbs           add handlebars engine support</span><br><span class="line">        --pug           add pug engine support</span><br><span class="line">    -H, --hogan         add hogan.js engine support</span><br><span class="line">        --no-view       generate without view engine</span><br><span class="line">    -v, --view &lt;engine&gt; add view &lt;engine&gt; support (ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)</span><br><span class="line">    -c, --css &lt;engine&gt;  add stylesheet &lt;engine&gt; support (less|stylus|compass|sass) (defaults to plain css)</span><br><span class="line">        --git           add .gitignore</span><br><span class="line">    -f, --force         force on non-empty directory</span><br></pre></td></tr></table></figure></div>
+
+<p>例如，以下创建一个名为 myapp 的 Express 应用程序。该应用程序将在当前工作目录中名为 myapp 的文件夹中创建，并且视图引擎将设置为 <code>ejs</code>：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ express --view=pug myapp</span><br><span class="line"></span><br><span class="line">   create : myapp</span><br><span class="line">   create : myapp/package.json</span><br><span class="line">   create : myapp/app.js</span><br><span class="line">   create : myapp/public</span><br><span class="line">   create : myapp/public/javascripts</span><br><span class="line">   create : myapp/public/images</span><br><span class="line">   create : myapp/routes</span><br><span class="line">   create : myapp/routes/index.js</span><br><span class="line">   create : myapp/routes/users.js</span><br><span class="line">   create : myapp/public/stylesheets</span><br><span class="line">   create : myapp/public/stylesheets/style.css</span><br><span class="line">   create : myapp/views</span><br><span class="line">   create : myapp/views/index.ejs</span><br><span class="line">   create : myapp/views/layout.ejs</span><br><span class="line">   create : myapp/views/error.ejs</span><br><span class="line">   create : myapp/bin</span><br><span class="line">   create : myapp/bin/www</span><br></pre></td></tr></table></figure></div>
+
+<p>然后安装依赖：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myapp</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></div>
+
+<p>在 MacOS 或 Linux 上，使用以下命令运行应用程序：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ DEBUG=myapp:* npm start</span><br></pre></td></tr></table></figure></div>
+
+<p>在 Windows 命令提示符上，使用以下命令：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">set</span> DEBUG=myapp:* &amp; npm start</span><br></pre></td></tr></table></figure></div>
+
+<p>然后在浏览器中加载 <code>http://localhost:3000/</code> 以访问该应用程序。</p>
+<p>生成的应用程序具有以下目录结构：</p>
+<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">├── app.js</span><br><span class="line">├── bin</span><br><span class="line">│   └── www</span><br><span class="line">├── package.json</span><br><span class="line">├── public</span><br><span class="line">│   ├── images</span><br><span class="line">│   ├── javascripts</span><br><span class="line">│   └── stylesheets</span><br><span class="line">│       └── style.css</span><br><span class="line">├── routes</span><br><span class="line">│   ├── index.js</span><br><span class="line">│   └── users.js</span><br><span class="line">└── views</span><br><span class="line">    ├── error.pug</span><br><span class="line">    ├── index.pug</span><br><span class="line">    └── layout.pug</span><br><span class="line"></span><br><span class="line">7 directories, 9 files</span><br></pre></td></tr></table></figure></div>
 
 
-<h4 id="显示效果"><a href="#显示效果" class="headerlink" title="显示效果"></a>显示效果</h4><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s1.ax1x.com/2023/05/25/p9H2m4A.png"
-                      alt="p9H2m4A.png"
-                ></p>
-<h4 id="CSS代码"><a href="#CSS代码" class="headerlink" title="CSS代码"></a>CSS代码</h4><div class="highlight-container" data-rel="Css"><figure class="iseeu highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line"><span class="comment">/* 设置 5 列显示 */</span></span><br><span class="line"><span class="attribute">column-count</span>: <span class="number">5</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&gt;<span class="selector-tag">div</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line"><span class="attribute">border</span>: <span class="number">3px</span> solid green;</span><br><span class="line"><span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line"><span class="attribute">margin-bottom</span>: <span class="number">10px</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置不折行显示 */</span></span><br><span class="line"><span class="attribute">break-inside</span>: avoid;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&gt;<span class="selector-tag">div</span>&gt;<span class="selector-tag">img</span> &#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-<h4 id="html-结构"><a href="#html-结构" class="headerlink" title="html 结构"></a>html 结构</h4><div class="highlight-container" data-rel="Html"><figure class="iseeu highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;box&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/1.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/2.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/3.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/4.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/5.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/6.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/7.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/8.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/9.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/10.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/11.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/12.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;img/13.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">p</span>&gt;</span>图片<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
             </div>
 
             
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 用多列布局实现瀑布流效果</li>
+        <li><strong>标题:</strong> Express 生成器</li>
         <li><strong>作者:</strong> sudo0m</li>
-        <li><strong>创建于:</strong> 2023-05-25 15:19:30</li>
+        <li><strong>创建于:</strong> 2023-06-15 09:42:19</li>
         
             <li>
-                <strong>更新于:</strong> 2023-05-25 15:36:10
+                <strong>更新于:</strong> 2023-06-15 09:52:48
             </li>
         
         <li>
-            <strong>链接:</strong> https://sudo0m.github.io/page/用多列布局实现瀑布流效果/
+            <strong>链接:</strong> https://sudo0m.github.io/page/Express生成器/
         </li>
         <li>
             <strong>版权声明:</strong> 本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 进行许可。
@@ -451,6 +475,14 @@
                             <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>&nbsp;
                         </li>
                     
+                        <li class="tag-item">
+                            <a href="/tags/node/">#node</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/express/">#express</a>&nbsp;
+                        </li>
+                    
                 </ul>
             
 
@@ -462,13 +494,13 @@
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/page/Express%E7%94%9F%E6%88%90%E5%99%A8/"
+                            href="/page/Express%20%E8%A7%A3%E5%86%B3%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">Express 生成器</span>
+                                    <span class="post-nav-title-item">Express 解决中文乱码</span>
                                     <span class="post-nav-item">上一篇</span>
                                 </span>
                             </a>
@@ -478,10 +510,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/page/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"
+                            href="/page/%E7%94%A8%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80%E5%AE%9E%E7%8E%B0%E7%80%91%E5%B8%83%E6%B5%81%E6%95%88%E6%9E%9C/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">正则表达式</span>
+                                    <span class="post-nav-title-item">用多列布局实现瀑布流效果</span>
                                     <span class="post-nav-item">下一篇</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -502,8 +534,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">此页目录</div>
-        <div class="page-title">用多列布局实现瀑布流效果</div>
-        
+        <div class="page-title">Express 生成器</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Express-%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-text">Express 生成器</span></a></li></ol>
 
     </div>
 </div>
