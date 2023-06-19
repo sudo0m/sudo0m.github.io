@@ -53,7 +53,14 @@
   <entry>
     <title>win10设置小鹤双拼</title>
     <url>/page/20230519091056/</url>
-    <content><![CDATA[<h3 id="打开注册表"><a href="#打开注册表" class="headerlink" title="打开注册表"></a>打开注册表</h3><p>按住 <code>windows</code> + <code>r</code> 输入 <code>regedit</code></p>
+    <content><![CDATA[<h3 id="可以使用注册表双击执行或者按步骤操作"><a href="#可以使用注册表双击执行或者按步骤操作" class="headerlink" title="可以使用注册表双击执行或者按步骤操作"></a>可以使用注册表双击执行或者按步骤操作</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS]</span><br><span class="line">&quot;Enable Cloud Candidate&quot;=dword:00000000</span><br><span class="line">&quot;Enable Dynamic Candidate Ranking&quot;=dword:00000001</span><br><span class="line">&quot;EnableExtraDomainType&quot;=dword:00000001</span><br><span class="line">&quot;Enable self-learning&quot;=dword:00000001</span><br><span class="line">&quot;EnableSmartSelfLearning&quot;=dword:00000001</span><br><span class="line">&quot;EnableLiveSticker&quot;=dword:00000000</span><br><span class="line">&quot;Enable EUDP&quot;=dword:00000001</span><br><span class="line">&quot;Enable Double Pinyin&quot;=dword:00000001</span><br><span class="line">&quot;UserDefinedDoublePinyinScheme0&quot;=&quot;小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt&quot;</span><br><span class="line">&quot;DoublePinyinScheme&quot;=dword:0000000a</span><br></pre></td></tr></table></figure></div>
+<p>保存到记事本里改后缀<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230619/QQ%E6%88%AA%E5%9B%BE20230619174425.ehofv2p5n14.webp"
+                      alt="QQ截图20230619174425"
+                ></p>
+<h3 id="打开注册表"><a href="#打开注册表" class="headerlink" title="打开注册表"></a>打开注册表</h3><p>按住 <code>windows</code> + <code>r</code> 输入 <code>regedit</code></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
