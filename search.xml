@@ -4,7 +4,12 @@
     <title>Express 生成器</title>
     <url>/page/20230615094219/</url>
     <content><![CDATA[<p>使用应用程序生成器工具 <code>express-generator</code> 快速创建应用程序骨架。</p>
-<p>您可以使用 <code>npx</code> 命令（在 Node.js 8.2.0 中可用）运行应用程序生成器。</p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/06/19/QHrtBYLjxnK46qg.png"
+                      alt="20230619164942.png"
+                ></p>
 <div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">$ npx express-generator</span><br></pre></td></tr></table></figure></div>
 
 <p>对于较早的 Node 版本，将应用程序生成器安装为全局 npm 包，然后启动它：</p>
@@ -14,8 +19,12 @@
 <div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">$ express -h</span><br><span class="line"></span><br><span class="line">  Usage: express [options] [<span class="built_in">dir</span>]</span><br><span class="line"></span><br><span class="line">  Options:</span><br><span class="line"></span><br><span class="line">    -h, --<span class="built_in">help</span>          output usage information</span><br><span class="line">        --version       output the version number</span><br><span class="line">    -e, --ejs           add ejs engine support</span><br><span class="line">        --hbs           add handlebars engine support</span><br><span class="line">        --pug           add pug engine support</span><br><span class="line">    -H, --hogan         add hogan.js engine support</span><br><span class="line">        --no-view       generate without view engine</span><br><span class="line">    -v, --view &lt;engine&gt; add view &lt;engine&gt; support (ejs|hbs|hjs|jade|pug|twig|vash) (defaults to jade)</span><br><span class="line">    -c, --css &lt;engine&gt;  add stylesheet &lt;engine&gt; support (less|stylus|compass|sass) (defaults to plain css)</span><br><span class="line">        --git           add .gitignore</span><br><span class="line">    -f, --force         force on non-empty directory</span><br></pre></td></tr></table></figure></div>
 
 <p>例如，以下创建一个名为 myapp 的 Express 应用程序。该应用程序将在当前工作目录中名为 myapp 的文件夹中创建，并且视图引擎将设置为 <code>ejs</code>：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">$ express --view=pug myapp</span><br><span class="line"></span><br><span class="line">   create : myapp</span><br><span class="line">   create : myapp/package.json</span><br><span class="line">   create : myapp/app.js</span><br><span class="line">   create : myapp/public</span><br><span class="line">   create : myapp/public/javascripts</span><br><span class="line">   create : myapp/public/images</span><br><span class="line">   create : myapp/routes</span><br><span class="line">   create : myapp/routes/index.js</span><br><span class="line">   create : myapp/routes/users.js</span><br><span class="line">   create : myapp/public/stylesheets</span><br><span class="line">   create : myapp/public/stylesheets/style.css</span><br><span class="line">   create : myapp/views</span><br><span class="line">   create : myapp/views/index.ejs</span><br><span class="line">   create : myapp/views/layout.ejs</span><br><span class="line">   create : myapp/views/error.ejs</span><br><span class="line">   create : myapp/bin</span><br><span class="line">   create : myapp/bin/www</span><br></pre></td></tr></table></figure></div>
-
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/06/19/lfpgAt7ueQqOFRm.png"
+                      alt="20230619164715.png"
+                ></p>
 <p>然后安装依赖：</p>
 <div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> myapp</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></div>
 
@@ -27,8 +36,12 @@
 
 <p>然后在浏览器中加载 <code>http://localhost:3000/</code> 以访问该应用程序。</p>
 <p>生成的应用程序具有以下目录结构：</p>
-<div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">├── app.js</span><br><span class="line">├── bin</span><br><span class="line">│   └── www</span><br><span class="line">├── package.json</span><br><span class="line">├── public</span><br><span class="line">│   ├── images</span><br><span class="line">│   ├── javascripts</span><br><span class="line">│   └── stylesheets</span><br><span class="line">│       └── style.css</span><br><span class="line">├── routes</span><br><span class="line">│   ├── index.js</span><br><span class="line">│   └── users.js</span><br><span class="line">└── views</span><br><span class="line">    ├── error.pug</span><br><span class="line">    ├── index.pug</span><br><span class="line">    └── layout.pug</span><br><span class="line"></span><br><span class="line">7 directories, 9 files</span><br></pre></td></tr></table></figure></div>
-
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/06/19/QHrtBYLjxnK46qg.png"
+                      alt="20230619164942.png"
+                ></p>
 ]]></content>
       <tags>
         <tag>前端</tag>
@@ -4448,58 +4461,58 @@ switch 语句在比较值时使用的是全等操作符（===）, 因此不会�
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/1.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/7BoPQ18JbANmlDO.jpg"
+                      alt="1.jpg"
                 ></p>
 <p>界面和我的差不多就说明成功了</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/2.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/ZWEJCxvRqn95Faw.jpg"
+                      alt="2.jpg"
                 ></p>
 <p>然后发现手机多了两个应用</p>
 <p>一个magisk 一个magiskenabler</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/3.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/89snweWGt3YVup1.jpg"
+                      alt="3.jpg"
                 ></p>
 <p>需要给magiskenabler开机自启权限和存储权限</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/4.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/tZE4bliYSr8mxLp.jpg"
+                      alt="4.jpg"
                 ></p>
 <p>打开MagiskEnabler设置开机启动</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/5.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/oSjQGX5I92kq3cy.jpg"
+                      alt="5.jpg"
                 ></p>
 <p>保存完后运行，我这个可能跟你们不一样，因为我已经运行过了</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/6.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/Zu75xN3VAKfPcOm.jpg"
+                      alt="6.jpg"
                 ></p>
 <p>已经获取root了，重启后也不会掉，如果没有检查自动启动是否给了</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/7.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/t1Az2jlQDZS7moB.jpg"
+                      alt="7.jpg"
                 ></p>
 <h2 id="可能存在的问题"><a href="#可能存在的问题" class="headerlink" title="可能存在的问题"></a>可能存在的问题</h2><p>如果提示这样错误，你没有开存储权限</p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/nutpro3root-img/8.jpg"
-                     
+                     data-src="https://s2.loli.net/2023/06/19/v9FC2rUIVuHeipo.jpg"
+                      alt="8.jpg"
                 ></p>
 <p>如果开机没启动，等一会，如果还是没有请检查自启权限是否给了</p>
 <h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>不要升级Magisk，只能修改system分区，模块若有问题请尝试热重启</p>
