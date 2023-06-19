@@ -3,7 +3,7 @@
   <entry>
     <title>Express 生成器</title>
     <url>/page/20230615094219/</url>
-    <content><![CDATA[<h1 id="Express-生成器"><a href="#Express-生成器" class="headerlink" title="Express 生成器"></a>Express 生成器</h1><p>使用应用程序生成器工具 <code>express-generator</code> 快速创建应用程序骨架。</p>
+    <content><![CDATA[<p>使用应用程序生成器工具 <code>express-generator</code> 快速创建应用程序骨架。</p>
 <p>您可以使用 <code>npx</code> 命令（在 Node.js 8.2.0 中可用）运行应用程序生成器。</p>
 <div class="highlight-container" data-rel="Sh"><figure class="iseeu highlight sh"><table><tr><td class="code"><pre><span class="line">$ npx express-generator</span><br></pre></td></tr></table></figure></div>
 
@@ -52,7 +52,7 @@
   <entry>
     <title>Express 解决中文乱码</title>
     <url>/page/20230615095154/</url>
-    <content><![CDATA[<h1 id="Express-解决中文乱码"><a href="#Express-解决中文乱码" class="headerlink" title="Express 解决中文乱码"></a>Express 解决中文乱码</h1><p>当调用 <code>res.end()</code> 方法，向客户端发送中文内容时，就会出现乱码问题，此时需要手动设置发送内容编码格式</p>
+    <content><![CDATA[<p>当调用 <code>res.end()</code> 方法，向客户端发送中文内容时，就会出现乱码问题，此时需要手动设置发送内容编码格式</p>
 <div class="highlight-container" data-rel="Js"><figure class="iseeu highlight js"><table><tr><td class="code"><pre><span class="line">server.<span class="title function_">on</span>(<span class="string">&quot;request&quot;</span>,<span class="function">(<span class="params">req,res</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="comment">// 发送的内容包含中文</span></span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">`您的请求的url<span class="subst">$&#123;req.url&#125;</span>,请求的method类型是<span class="subst">$&#123;req.method&#125;</span>`</span></span><br><span class="line">    <span class="comment">// 为了防止中文显示乱码问题需要设置相应头</span></span><br><span class="line">    <span class="comment">// Content-Type 的值为 text/html;charset=utf-8</span></span><br><span class="line">    res.<span class="title function_">setHeader</span>(<span class="string">&quot;content-type&quot;</span>, <span class="string">&quot;text/html;charseutf-8&quot;</span>)</span><br><span class="line">    res.<span class="title function_">end</span>(str)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></div>
 ]]></content>
       <tags>
