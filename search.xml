@@ -54,9 +54,33 @@
     <title>win10设置小鹤双拼</title>
     <url>/page/20230519091056/</url>
     <content><![CDATA[<h3 id="打开注册表"><a href="#打开注册表" class="headerlink" title="打开注册表"></a>打开注册表</h3><p>按住 <code>windows</code> + <code>r</code> 输入 <code>regedit</code></p>
-<p>在最上面地址输入 <code>计算机\HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS</code> </p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230619/Snipaste_2023-06-19_17-26-07.1ooxkzs7ekyo.webp"
+                      alt="Snipaste_2023-06-19_17-26-07"
+                ></p>
+<p>在最上面地址输入 <code>计算机\HKEY_CURRENT_USER\Software\Microsoft\InputMethod\Settings\CHS</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230619/7BoPQ18JbANmlDO.5cpaq8tdoz40.webp"
+                      alt="7BoPQ18JbANmlDO"
+                ></p>
 <h3 id="创建字符串值"><a href="#创建字符串值" class="headerlink" title="创建字符串值"></a>创建字符串值</h3><p>新建一个名为 <code>UserDefinedDoublePinyinScheme0</code>  的 <code>字符串值</code></p>
 <p>数值数据为  <code>小鹤双拼*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt</code></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230619/Snipaste_2023-06-19_17-28-25.x44bx8wuv1c.webp"
+                      alt="Snipaste_2023-06-19_17-28-25"
+                ></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230619/Snipaste_2023-06-19_17-35-19.69qg4cw4y100.webp"
+                      alt="Snipaste_2023-06-19_17-35-19"
+                ></p>
 ]]></content>
       <tags>
         <tag>windows</tag>
