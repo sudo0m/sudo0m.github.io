@@ -29,13 +29,16 @@
 <meta property="og:site_name" content="sudo0m">
 <meta property="og:description" content="在配置嵌套路由 react-router 时候 遇到这个问题 报错信息： 12345You rendered descendant &lt;Routes (or called &#96;useRoutes()&#96;) at &quot;&#x2F;&quot; (under &lt;Route path&#x3D;&quot;&#x2F;&quot;&gt;) but the parent route path has no traili">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230818/image.2amf0tns9ssg.png">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230818/image.35v9q15ewu40.png">
 <meta property="article:published_time" content="2023-08-18T07:51:50.706Z">
-<meta property="article:modified_time" content="2023-08-18T07:54:04.180Z">
+<meta property="article:modified_time" content="2023-08-18T07:57:58.942Z">
 <meta property="article:author" content="sudo0m">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="笔记">
 <meta property="article:tag" content="react">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230818/image.2amf0tns9ssg.png">
     
     
         <!-- Google tag (gtag.js) -->
@@ -362,8 +365,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-08-18 15:54:04</span>
-            <span class="mobile">2023-08-18 15:54</span>
+            <span class="desktop">2023-08-18 15:57:58</span>
+            <span class="mobile">2023-08-18 15:57</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -411,14 +414,22 @@
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">You rendered descendant &lt;Routes (or called `useRoutes()`) at &quot;/&quot; (under &lt;Route path=&quot;/&quot;&gt;) </span><br><span class="line">but the parent route path has no trailing &quot;*&quot;. This means if you navigate deeper, </span><br><span class="line">the parent won&#x27;t match anymore and therefore the child routes will never render.</span><br><span class="line"></span><br><span class="line">Please change the parent &lt;Route path=&quot;/&quot;&gt; to &lt;Route path=&quot;*&quot;&gt;.</span><br></pre></td></tr></table></figure></div>
 
 <p>代码：</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Routes&gt;</span><br><span class="line">    &lt;Route path=&quot;/&quot; element=&#123;(</span><br><span class="line">        &lt;Index&gt;</span><br><span class="line">            &lt;Routes&gt;</span><br><span class="line">                &lt;Route path=&quot;/home&quot; element=&#123;&lt;Home /&gt;&#125; /&gt;</span><br><span class="line">                &lt;Route path=&quot;/user&quot; element=&#123;&lt;User /&gt;&#125; /&gt;</span><br><span class="line">            &lt;/Routes&gt;</span><br><span class="line">        &lt;/Index&gt;</span><br><span class="line">    )&#125; /&gt;</span><br><span class="line">&lt;/Routes&gt;</span><br></pre></td></tr></table></figure></div>
-
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230818/image.2amf0tns9ssg.png"
+                      alt="image"
+                ></p>
 <p>解决办法</p>
 <blockquote>
-<p>正在渲染更深层的嵌套路由，并且路径需要指定通配符<code>*</code>以指示它可以匹配更通用&#x2F;嵌套的路径。<code>react-router-dom</code>路由路径<em><strong>始终</strong></em>完全匹配，因此如果渲染子路由，则路径需要允许它们。更改<code>path=&quot;/&quot;</code>为<code>path=&quot;/*&quot;</code>.</p>
+<p><code>react-router-dom</code>路由路径默认是完全匹配，因此如果渲染子路由，则路径需要允许它们。更改<code>path=&quot;/&quot;</code>为<code>path=&quot;/*&quot;</code> .</p>
 </blockquote>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;Routes&gt;</span><br><span class="line">    &lt;Route path=&quot;/*&quot; element=&#123;(</span><br><span class="line">        &lt;Index&gt;</span><br><span class="line">            &lt;Routes&gt;</span><br><span class="line">                &lt;Route path=&quot;/home&quot; element=&#123;&lt;Home /&gt;&#125; /&gt;</span><br><span class="line">                &lt;Route path=&quot;/user&quot; element=&#123;&lt;User /&gt;&#125; /&gt;</span><br><span class="line">            &lt;/Routes&gt;</span><br><span class="line">        &lt;/Index&gt;</span><br><span class="line">    )&#125; /&gt;</span><br><span class="line">&lt;/Routes&gt;</span><br></pre></td></tr></table></figure></div>
-
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230818/image.35v9q15ewu40.png"
+                      alt="image"
+                ></p>
 <p>参考文章：</p>
 <ul>
 <li><a class="link"   target="_blank" rel="noopener" href="https://stackoverflow.com/questions/70604020/please-change-the-parent-route-path-to-route-path" >https://stackoverflow.com/questions/70604020/please-change-the-parent-route-path-to-route-path <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
@@ -435,7 +446,7 @@
         <li><strong>创建于:</strong> 2023-08-18 15:51:50</li>
         
             <li>
-                <strong>更新于:</strong> 2023-08-18 15:54:04
+                <strong>更新于:</strong> 2023-08-18 15:57:58
             </li>
         
         <li>
