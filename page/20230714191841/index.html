@@ -29,17 +29,17 @@
 <meta property="og:site_name" content="sudo0m">
 <meta property="og:description" content="问题重现：进入列表页后，先打开编辑框，然后打开新增框，新增框会填充第一次打开的编辑框内容 代码流程：打开编辑页面给编辑框传入值，然后调用 this.$refs[forName].resetFields() resetFields()方法官网的解释 也就是说在调用弹窗传入值的时候就把初始值更改了，那么后面调用resetFields()都是无效的，因为form表单的初始值已经在 mounted 之前就">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-05-52.5ktfv7n6ybo0.jpg">
-<meta property="og:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-14-23.3ni5z2u1gdk0.jpg">
-<meta property="og:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-12-21.5eoagm32yvg0.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-05-52.5ktfv7n6ybo0.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-14-23.3ni5z2u1gdk0.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-12-21.5eoagm32yvg0.jpg">
 <meta property="article:published_time" content="2023-07-14T11:18:41.000Z">
-<meta property="article:modified_time" content="2023-07-14T11:20:56.591Z">
+<meta property="article:modified_time" content="2024-06-09T01:15:44.185Z">
 <meta property="article:author" content="sudo0m">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="笔记">
 <meta property="article:tag" content="vue">
+<meta property="article:tag" content="笔记">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-05-52.5ktfv7n6ybo0.jpg">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-05-52.5ktfv7n6ybo0.jpg">
     
     
         <!-- Google tag (gtag.js) -->
@@ -366,8 +366,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-07-14 19:20:56</span>
-            <span class="mobile">2023-07-14 19:20</span>
+            <span class="desktop">2024-06-09 09:15:44</span>
+            <span class="mobile">2024-06-09 09:15</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -379,7 +379,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
+                        <a href="/tags/vue/">vue</a>&nbsp;
                     </li>
                 
                     <li>
@@ -387,7 +387,7 @@
                     </li>
                 
                     <li>
-                        | <a href="/tags/vue/">vue</a>&nbsp;
+                        | <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>&nbsp;
                     </li>
                 
             </ul>
@@ -415,7 +415,7 @@
 <h2 id="resetFields-方法官网的解释"><a href="#resetFields-方法官网的解释" class="headerlink" title="resetFields()方法官网的解释"></a>resetFields()方法官网的解释</h2><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-05-52.5ktfv7n6ybo0.jpg"
+                     data-src="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-05-52.5ktfv7n6ybo0.jpg"
                       alt="Snipaste_2023-07-14_19-05-52"
                 ></p>
 <p>也就是说在调用弹窗传入值的时候就把初始值更改了，那么后面调用resetFields()都是无效的，因为form表单的初始值已经在 mounted 之前就被赋值了</p>
@@ -425,14 +425,14 @@
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-14-23.3ni5z2u1gdk0.jpg"
+                     data-src="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-14-23.3ni5z2u1gdk0.jpg"
                       alt="Snipaste_2023-07-14_19-14-23"
                 ></p>
 <p><strong>正确代码：</strong></p>
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="https://cdn.staticaly.com/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-12-21.5eoagm32yvg0.jpg"
+                     data-src="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20230714/Snipaste_2023-07-14_19-12-21.5eoagm32yvg0.jpg"
                       alt="Snipaste_2023-07-14_19-12-21"
                 ></p>
 
@@ -447,7 +447,7 @@
         <li><strong>创建于:</strong> 2023-07-14 19:18:41</li>
         
             <li>
-                <strong>更新于:</strong> 2023-07-14 19:20:56
+                <strong>更新于:</strong> 2024-06-09 09:15:44
             </li>
         
         <li>
@@ -466,7 +466,7 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>&nbsp;
+                            <a href="/tags/vue/">#vue</a>&nbsp;
                         </li>
                     
                         <li class="tag-item">
@@ -474,7 +474,7 @@
                         </li>
                     
                         <li class="tag-item">
-                            <a href="/tags/vue/">#vue</a>&nbsp;
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">#前端</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -556,7 +556,7 @@
               <span>2021</span>
               -
             
-            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">sudo0m</a>
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">sudo0m</a>
         </div>
         
             <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>

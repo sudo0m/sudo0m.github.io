@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /page/
-Allow: /archives/
-Allow: /tags/
-Allow: /about/
-Sitemap: https://sudo0m.github.io/sitemap.xml
-Sitemap: https://sudo0m.github.io/baidusitemap.xml
