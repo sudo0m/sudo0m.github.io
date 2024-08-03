@@ -44,7 +44,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20240703/58fa7c1db885a998380fab5b7bfcb30.92q0bpinvn.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20240703/52f875553ac2de19c5ea3562d6bc13a.5mnojm90td.webp">
 <meta property="article:published_time" content="2024-07-03T11:31:28.000Z">
-<meta property="article:modified_time" content="2024-07-04T10:02:25.906Z">
+<meta property="article:modified_time" content="2024-08-03T13:13:56.007Z">
 <meta property="article:author" content="sudo0m">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="服务器">
@@ -551,8 +551,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-07-04 18:02:25</span>
-            <span class="mobile">2024-07-04 18:02:25</span>
+            <span class="desktop">2024-08-03 21:13:56</span>
+            <span class="mobile">2024-08-03 21:13:56</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -661,23 +661,15 @@
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S samba avahi</span><br></pre></td></tr></table></figure></div>
 
 <h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><p>Samba 需要 Linux 账户才能使用 - 可以使用已有账户或<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84#%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86" >创建新用户 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo smbpasswd -a samba_user</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo smbpasswd -a 用户 <span class="comment"># 使用当前登录的用户</span></span><br></pre></td></tr></table></figure></div>
 
-<blockquote>
-<p>根据<a class="link"   target="_blank" rel="noopener" href="https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html#SERVERROLE" >服务器角色 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>的差异，可能需要为 Samba 用户账户修改已有的<a class="link"   target="_blank" rel="noopener" href="https://wiki.archlinuxcn.org/wiki/%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E4%B8%8E%E5%B1%9E%E6%80%A7" >文件权限与属性 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
-<p>要让新创建的用户仅能访问 Samba 远程文件服务器，可以禁用其它登录选项：</p>
-<ul>
-<li>禁用 shell - <code>usermod --shell /usr/bin/nologin --lock *samba_user*</code></li>
-<li>禁用 SSH 登录 - 编辑 <code>/etc/ssh/sshd_config</code> 文件，修改 <code>AllowUsers</code> 选项</li>
-</ul>
-</blockquote>
 <h4 id="创建匿名共享"><a href="#创建匿名共享" class="headerlink" title="创建匿名共享"></a>创建匿名共享</h4><p>创建新 Linux 用户，匿名 Samba 用户将映射到该用户。</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo useradd guest -s /bin/nologin</span><br></pre></td></tr></table></figure></div>
 
 <p>修改<code>/etc/samba/smb.conf</code> 文件</p>
 <p>配置文件可以参考</p>
 <p><a class="link"   target="_blank" rel="noopener" href="https://man.archlinux.org/man/smbd.8" >https://man.archlinux.org/man/smbd.8 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">   workgroup = WORKGROUP</span><br><span class="line">   server string = Arch Server</span><br><span class="line">   security = user</span><br><span class="line">   map to guest = bad user</span><br><span class="line">   guest account = smb</span><br><span class="line">   vfs objects = catia fruit streams_xattr</span><br><span class="line">   </span><br><span class="line">[Network Storage]</span><br><span class="line">   comment = Network Storage</span><br><span class="line">   path = /srv/share</span><br><span class="line">   guest ok = yes</span><br><span class="line">   writable = yes</span><br><span class="line">   create mask = 0777</span><br><span class="line">   directory mask = 0777</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">   workgroup = WORKGROUP</span><br><span class="line">   server string = Arch Server</span><br><span class="line">   security = user</span><br><span class="line">   map to guest = bad user</span><br><span class="line">   guest account = smb</span><br><span class="line">   vfs objects = catia fruit streams_xattr</span><br><span class="line">   </span><br><span class="line">[Network Storage]</span><br><span class="line">   comment = Network Storage</span><br><span class="line">   path = /srv/share</span><br><span class="line">   force user = 用户</span><br><span class="line">   force group = 用户</span><br><span class="line">   guest ok = yes</span><br><span class="line">   writable = yes</span><br><span class="line">   create mask = 0777</span><br><span class="line">   directory mask = 0777</span><br></pre></td></tr></table></figure></div>
 
 <h5 id="全局设置部分"><a href="#全局设置部分" class="headerlink" title="全局设置部分"></a>全局设置部分</h5><ul>
 <li><strong><code>server string = Arch Server</code></strong>: 设置服务器的描述字符串。这个描述会在网络中显示，例如“Arch Server”。</li>
@@ -725,8 +717,9 @@
                      data-src="https://cdn.jsdelivr.net/gh/sudo0m/picx-images-hosting@master/20240703/Snipaste_2024-07-03_15-13-57.7zqb0kqr8m.webp"
                       alt="Snipaste_2024-07-03_15-13-57"
                 ></p>
-<h2 id="配置打印机"><a href="#配置打印机" class="headerlink" title="配置打印机"></a>配置打印机</h2><p>我这里的打印机是惠普的 所以我用 hplip + cpus</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S hplip cpus</span><br></pre></td></tr></table></figure></div>
+<h2 id="配置打印机"><a href="#配置打印机" class="headerlink" title="配置打印机"></a>配置打印机</h2><p>我这里的打印机是惠普的 所以我用 hplip + cups</p>
+<p>Avahi  能够在网络中搜索到</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S hplip cups  Avahi </span><br></pre></td></tr></table></figure></div>
 
 <p>安装完后运行,然后根据步骤一步一步确认</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hp-setup -i</span><br></pre></td></tr></table></figure></div>
@@ -744,7 +737,7 @@
                       alt="Snipaste_2024-07-03_19-15-50"
                 ></p>
 <p>启动cups 设置开启启动</p>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cups.service</span><br><span class="line"></span><br><span class="line">sudo systemctl <span class="built_in">enable</span> cups.service</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start cups.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> cups.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#启用 Avahi </span></span><br><span class="line">sudo systemctl start avahi-daemon.service</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> avahi-daemon.service</span><br></pre></td></tr></table></figure></div>
 
 <p>启动完后可以通过 631端口进入cups控制打印机</p>
 <p><img  
@@ -786,7 +779,7 @@
 <blockquote>
 <p>请将dockerhub镜像仓库地址替换为 <strong>images-cluster.xycloud.com</strong></p>
 </blockquote>
-<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull images-cluster.xycloud.com/wxedge/wxedge:latest</span><br><span class="line"></span><br><span class="line">docker run -d --name=wxedge --restart=always --privileged --net=host --tmpfs /run --tmpfs /tmp -v 磁盘路径:/storage:rw  **images-cluster.xycloud.com/wxedge/wxedge:latest**</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull images-cluster.xycloud.com/wxedge/wxedge:latest</span><br><span class="line"></span><br><span class="line">docker run -d --name=wxedge --restart=always --privileged --net=host --tmpfs /run --tmpfs /tmp -v 磁盘路径:/storage:rw  images-cluster.xycloud.com/wxedge/wxedge:latest</span><br></pre></td></tr></table></figure></div>
 
 <p>“<strong>磁盘路径”是磁盘的目录，请根据自己实际磁盘目录更改，必须挂载到容器内的&#x2F;storage目录，推荐磁盘是ext4文件系统，至少需要50G以上的空间，建议是固态硬盘</strong>。</p>
 <p><em>-e LISTEN_ADDR&#x3D;”0.0.0.0:28888” 支持设置绑定页面的监听地址和端口，监听全地址设置-e LISTEN_ADDR&#x3D;”:28888”，默认监听全地址18888端口。多开容器也可以参考用该参数，比如容器A使用参数-e LISTEN_ADDR&#x3D;”:18888”，容器B使用参数 -e LISTEN_ADDR&#x3D;”:28888”（已经实现同一业务可多次添加，不建议多开容器）</em></p>
@@ -827,7 +820,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2024-07-04 18:02:25
+                    :</strong> 2024-08-03 21:13:56
             </li>
         
         <li>
