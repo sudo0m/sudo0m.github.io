@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="sudo0m blog hexo android">
+    
+    <meta name="author" content="sudo0m">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set data attribute for CSS variables
+                root.setAttribute("data-theme", theme);
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes once DOM is ready
+            if (document.readyState !== "loading") {
+                document.body.classList.add(theme + "-mode");
+            } else {
+                document.addEventListener("DOMContentLoaded", () => {
+                    document.body.classList.add(theme + "-mode");
+                    document.body.classList.remove((theme === DARK ? LIGHT : DARK) + "-mode");
+                });
+            }
+        })();
+    </script>
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        :root[data-theme="dark"] {
+            --background-color: #202124;
+            --background-color-transparent: rgba(32, 33, 36, 0.6);
+            --second-background-color: #2d2e32;
+            --third-background-color: #34353a;
+            --third-background-color-transparent: rgba(32, 33, 36, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #ffffff;
+            --second-text-color: #eeeeee;
+            --third-text-color: #bebec6;
+            --fourth-text-color: #999999;
+            --default-text-color: #bebec6;
+            --invert-text-color: #373D3F;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(255, 255, 255, 0.08);
+            --shadow-color-2: rgba(255, 255, 255, 0.05);
+        }
+        
+        :root[data-theme="light"] {
+            --background-color: #fff;
+            --background-color-transparent: rgba(255, 255, 255, 0.6);
+            --second-background-color: #f8f8f8;
+            --third-background-color: #f2f2f2;
+            --third-background-color-transparent: rgba(241, 241, 241, 0.6);
+            --primary-color: #0066CC;
+            --first-text-color: #16171a;
+            --second-text-color: #2f3037;
+            --third-text-color: #5e5e5e;
+            --fourth-text-color: #eeeeee;
+            --default-text-color: #373D3F;
+            --invert-text-color: #bebec6;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --selection-color: #0066CC;
+            --shadow-color-1: rgba(0, 0, 0, 0.08);
+            --shadow-color-2: rgba(0, 0, 0, 0.05);
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+        
+        /* Apply body classes as soon as DOM is ready */
+        :root[data-theme="dark"] body {
+            background-color: var(--background-color);
+            color: var(--default-text-color);
+        }
+    </style>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="https://sudo0m.tech/posts/3c3514c7/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="普通人理财攻略">
+<meta property="og:url" content="https://sudo0m.tech/posts/3c3514c7/index.html">
+<meta property="og:site_name" content="sudo0m">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sudo0m.tech/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-06-13T17:06:38.000Z">
+<meta property="article:modified_time" content="2026-02-01T17:14:46.225Z">
+<meta property="article:author" content="sudo0m">
+<meta property="article:tag" content="理财">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sudo0m.tech/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/sudo0m.jfif" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/sudo0m.jfif">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/sudo0m.jfif">
+    <!--- Page Info-->
+    
+    <title>
+        
+            普通人理财攻略 | sudo0m&#39;s Blog
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+        <link href="" rel="stylesheet">
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"sudo0m.tech","root":"/","language":"zh-CN","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":2,"number":false,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":true,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"static","image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title":"root@sudo0m:~#_","subtitle":{"text":[],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.5","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"TimeLine":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"tags":{"Tags":null,"icon":"fa-solid fa-tags","path":"/tags/"},"Friends":{"icon":"fa-solid fa-link","path":"/links/"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":null},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                sudo0m&#39;s Blog
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    首页
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    时间轴
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    分类
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags/"
+                                        >
+                                    <i class="fa-solid fa-tags fa-fw"></i>
+                                    标签
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/links/"
+                                        >
+                                    <i class="fa-solid fa-link fa-fw"></i>
+                                    友情链接
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                首页
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                时间轴
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                分类
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags/"
+                        >
+                            <span>
+                                标签
+                            </span>
+                            
+                                <i class="fa-solid fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/links/"
+                        >
+                            <span>
+                                友情链接
+                            </span>
+                            
+                                <i class="fa-solid fa-link fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">19</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">7</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">27</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">普通人理财攻略</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/sudo0m.jfif">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">sudo0m</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-06-14 01:06:38</span>
+        <span class="mobile">2024-06-14 01:06:38</span>
+        <span class="hover-info">创建</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2026-02-02 01:14:46</span>
+            <span class="mobile">2026-02-02 01:14:46</span>
+            <span class="hover-info">更新</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/%E7%90%86%E8%B4%A2/">理财</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E7%90%86%E8%B4%A2/">理财</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><blockquote>
+<p>钱是变出来的还是攒出来的? </p>
+<ol>
+<li>如果是攒出来的, 你攒一辈子, 攒了一百万可以, 一千万可以嘛? 如果是攒钱, 那么有上限</li>
+<li>如果是变出来的, 该怎么变呢?</li>
+</ol>
+</blockquote>
+<h2 id="炒股"><a href="#炒股" class="headerlink" title="炒股"></a>炒股</h2><blockquote>
+<p>来炒股的人都是为了赚钱, 毫不夸张的说, 都是为了一夜暴富. 但是股市就是这么神奇, 想一夜暴富的人, 总是股市里边亏钱的人,<br>只有那些不着急的人, 慢慢的人, 才能在股市里赚到钱.<br>倘若你是为了赚钱, 那么你一定要慢慢来, 如果是为了暴富, 股市明显不适合你. 在股市里, 慢就是快, 你只要慢下来, 才能快起来.<br>一天看不出来效果, 一周看不出来, 一个月才能看出来一点效果, 一年下来, 效果就特别明显了.   </p>
+</blockquote>
+<h2 id="投资的基本原则"><a href="#投资的基本原则" class="headerlink" title="投资的基本原则"></a>投资的基本原则</h2><h3 id="1-天上不会掉馅饼"><a href="#1-天上不会掉馅饼" class="headerlink" title="1.天上不会掉馅饼"></a>1.天上不会掉馅饼</h3><p>​			回报率收益率越高（&gt;7%)，风险越高</p>
+<h3 id="2-坚持长线投资、价值投资"><a href="#2-坚持长线投资、价值投资" class="headerlink" title="2.坚持长线投资、价值投资"></a>2.坚持长线投资、价值投资</h3><p>​			拒绝短线操作，拒绝人工看k线瞎猜</p>
+<h3 id="3-好的资产一定是昂贵的，好货不便宜"><a href="#3-好的资产一定是昂贵的，好货不便宜" class="headerlink" title="3.好的资产一定是昂贵的，好货不便宜"></a>3.好的资产一定是昂贵的，好货不便宜</h3><h3 id="4-牢记雌蝉和商业的第一性原理："><a href="#4-牢记雌蝉和商业的第一性原理：" class="headerlink" title="4.牢记雌蝉和商业的第一性原理："></a>4.牢记雌蝉和商业的第一性原理：</h3><p>​			创造价值的省生意，就是好的生意</p>
+<p>​			持有优质公司的股票（因为股票有财报都是透明的）</p>
+<h3 id="4-你的主业是学习和工作，不是华尔街交易员"><a href="#4-你的主业是学习和工作，不是华尔街交易员" class="headerlink" title="4.你的主业是学习和工作，不是华尔街交易员"></a>4.你的主业是学习和工作，不是华尔街交易员</h3><p>​			不要在投资商过分浪费精力</p>
+<p>​			将投资交给专业的机构</p>
+<h2 id="美股指数基金"><a href="#美股指数基金" class="headerlink" title="美股指数基金"></a>美股指数基金</h2><p>可以拿出总资产的 <em><strong>30%-50%</strong></em> 的钱</p>
+<p>投在 <em><strong>标普500(S%P 500，SPY)</strong></em></p>
+<p>以及 <em><strong>纳斯达克100(Nasdaq-100,QQQ)</strong></em></p>
+<p>长期每月定投</p>
+<p>持有10-50年以上，会得到非常可观的收入</p>
+<p>不要看美国今年怎么怎么样了</p>
+<p>基金这个东西不是短线操作，是长期持有</p>
+<p>投机可以去 炒美股，区块链</p>
+<h2 id="优质美股"><a href="#优质美股" class="headerlink" title="优质美股"></a>优质美股</h2><ol>
+<li>Microsoft</li>
+<li>Nvidia</li>
+<li>Apple</li>
+<li>Google</li>
+<li>Amazon</li>
+<li>Meta</li>
+</ol>
+<blockquote>
+<p>前提：</p>
+<ol>
+<li>相信美国国运</li>
+<li>相信科技互联网科的力量</li>
+<li>相信北美大厂的稳定商业模式</li>
+<li>相信硅谷科技和商业区动力</li>
+</ol>
+</blockquote>
+<h2 id="高分红港股"><a href="#高分红港股" class="headerlink" title="高分红港股"></a>高分红港股</h2><ul>
+<li>股价常年稳定</li>
+<li>分红常年稳定 （5%-7%左右）</li>
+<li>中国工商银行、中国银行等</li>
+</ul>
+<h2 id="其他的股份、股票指数-——-不懂不要碰"><a href="#其他的股份、股票指数-——-不懂不要碰" class="headerlink" title="其他的股份、股票指数 —— 不懂不要碰"></a>其他的股份、股票指数 —— 不懂不要碰</h2><p>高增长经济体： 印度、越南、台湾 —— 不懂不要碰</p>
+<p>巴菲特买入：日本 —— 不懂不要碰</p>
+<p>半导体、石油等指数 —— 不懂不要碰</p>
+<p>港股 —— 政治因素太复杂，不懂不要碰</p>
+<p>常年3000点A股 —— 暗箱和黑幕太多，不懂不要碰 （适合投机，风险比较大）</p>
+<h2 id="美国国债-（5-）"><a href="#美国国债-（5-）" class="headerlink" title="美国国债 （5%）"></a>美国国债 （5%）</h2><p>相信美国国运</p>
+<p>相信美国科技和商业创新能力</p>
+<p>相信美元全球基础地位</p>
+<p>无脑买入</p>
+<h2 id="中国国债、地方债-（零风险）"><a href="#中国国债、地方债-（零风险）" class="headerlink" title="中国国债、地方债 （零风险）"></a>中国国债、地方债 （零风险）</h2><p>中央超长期国债（2.57%）	</p>
+<p>沿海地方债、专项债（2.5%~4%）</p>
+<p>特点：</p>
+<ol>
+<li>中国政府不会债务延期、重组</li>
+<li>无理由刚性兑付 （绝不会不兑付，如果违约对中国是一个巨大的金融问题）</li>
+<li>靠财政、税收长期和政府信誉的保证</li>
+</ol>
+<p>（宁可停掉教师、公交车司机公司也要保证兑付）</p>
+<h2 id="中国商品房"><a href="#中国商品房" class="headerlink" title="中国商品房"></a>中国商品房</h2><p>卖房，卖房，卖房 （巨大的泡沫资产）</p>
+<blockquote>
+<p>目前是正在破碎的阶段 2024 开始下降，预计2030年左右才开始上涨，在此之前都会下跌</p>
+<p>香港 日本 等 都经历过 这是一个基本经济学原理</p>
+</blockquote>
+<p>租售比低（绝大多数低于3%，甚至低于1%）</p>
+<p>房价&#x2F;年收入过高（中国绝大多城市&gt;20倍，韩国也就15-20) </p>
+<p>能和中国上海深圳相提并论的也就香港、新加坡、大马士革、叙利亚</p>
+<p>原理： 土地财政是基层政府吸血工具</p>
+<p>地方财政对土地依赖高于70%</p>
+<p>3万&#x2F;平米的房子：</p>
+<p>建房成本：&lt;3000&#x2F;平米</p>
+<p>营销成本：&lt;1000-3000&#x2F;平米</p>
+<p>楼面价（土地出让金）+税费：20000+ &#x2F;平米 （这些是要交给政府的）</p>
+<p>中国土地是用不完的</p>
+<p><em><strong>贷款买房子要想清楚，不存在刚需，你可以租，养活你的房子，养不活就是你的债务</strong></em></p>
+<p>假如在北京一套房子1000w的房子 每年租金差不多5-10w左右 房东在吃亏 有1000w投资房产</p>
+<h2 id="其他国家上商品房（增值、出租）"><a href="#其他国家上商品房（增值、出租）" class="headerlink" title="其他国家上商品房（增值、出租）"></a>其他国家上商品房（增值、出租）</h2><p>美国商品房：管理维修成本搞，增值速度慢</p>
+<p>泰国、印尼、马来西亚商品房：割韭菜</p>
+<p>新加坡商品房：价格虚高、谁高</p>
+<p>香港商品房：价格虚高</p>
+<p>日本商品房（东京）：增值速度慢，规则复杂</p>
+<p>英法德等欧洲房产：价格虚高</p>
+<p>房子就是买回来住的，不然巴菲特就投资房产了</p>
+<p>房子需要管理成本，不如股票基金买完等着就行了</p>
+<p>总结：<em><strong>全世界的商品房，都不是好的投资资产</strong></em></p>
+<h2 id="投资你懂的领域和行业：餐饮、消费、实体经济"><a href="#投资你懂的领域和行业：餐饮、消费、实体经济" class="headerlink" title="投资你懂的领域和行业：餐饮、消费、实体经济"></a>投资你懂的领域和行业：餐饮、消费、实体经济</h2><ul>
+<li>景点周边旅馆</li>
+<li>老社区周围的餐饮</li>
+<li>办公楼旁边自助餐、咖啡、便利店</li>
+<li>学校周围德炸串</li>
+<li>市中心商业街的小吃</li>
+</ul>
+<p>只投资 “人尽皆知德大品牌“ ，能长期运营&gt;10年</p>
+<p>美国：麦当劳、subway、必胜客</p>
+<p>中国：蜜雪冰城、瑞星咖啡、本土餐饮（老乡鸡）</p>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤:"></a>步骤:</h3><ol>
+<li>计算客流和周边商业生态 （消费群体是那些，什么样的客流做什么样的生意）</li>
+<li>计算盈亏平衡点（房租、水电、人工、毛利率、固定成本、客单价）</li>
+<li>计算投资总成本、回本周期</li>
+<li>考虑其他因素</li>
+</ol>
+<p>可以看 <code>勇哥餐饮创业说</code> 和 <code>大刘聊实体</code></p>
+<h2 id="特殊投资品"><a href="#特殊投资品" class="headerlink" title="特殊投资品"></a>特殊投资品</h2><p>炒期货、炒外汇：不懂别碰，绝大多数人不懂</p>
+<p>黄金： 供需市场复杂，情绪化投机多，难以量化，交易成本高&gt;80%成熟投资机构从来不碰黄金（除了国家） （没必要非得投黄金，有比黄金更好的投资产品，如果没有强烈的执念不要碰）</p>
+<p>区块链：</p>
+<ul>
+<li>Bitcoin：比黄金市场还复杂，分析成本高，杂音多，不懂别碰</li>
+<li>Ethereum：与Bitcoin关联大，不懂别碰</li>
+<li>技术型项目（Solana、Aptos、Sui、Chainlink）：咋用多，不懂技术，不看源代码别碰</li>
+<li>Meme coin&#x2F;NFT （土狗）：韭菜盘，不懂别碰</li>
+<li>DeFi协议、质押收益：项目方复杂，流动性无法预测，不懂别碰</li>
+</ul>
+<p>结论：<em><strong>Crypto资产很复杂，不懂技术别碰</strong></em></p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+<p>​		在华尔街工作他每天的工作就是干这个活，就每天干投机的事情，对于这些人来说投机短线操作是正确的，除此之外对于咱们普通人，每天要工作要上班的人来说，要做<strong>价值投资</strong>者，要做时间的朋友，要长期持有，要懂自己懂的资产，要用第一性原理去思考世界的商业本质好的生意，投能够让你持续持有10年的好资产。</p>
+</blockquote>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>标题:</strong> 普通人理财攻略</li>
+        <li><strong>作者:</strong> sudo0m</li>
+        <li><strong>创建于
+                :</strong> 2024-06-14 01:06:38</li>
+        
+            <li>
+                <strong>更新于
+                    :</strong> 2026-02-02 01:14:46
+            </li>
+        
+        <li>
+            <strong>链接:</strong> https://sudo0m.github.io/posts/3c3514c7/
+        </li>
+        <li>
+            <strong>
+                版权声明:
+            </strong>
+            
+
+            
+                本文章采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a> 进行许可。
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E7%90%86%E8%B4%A2/">#理财</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/posts/b1e6a001/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">三十年，解决人生三大问题</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/posts/b989ae0/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">Element resetFields()重置表单不生效的问题</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">目录</div>
+		<div class="page-title">普通人理财攻略</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%82%92%E8%82%A1"><span class="nav-text">炒股</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%95%E8%B5%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="nav-text">投资的基本原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E8%82%A1%E6%8C%87%E6%95%B0%E5%9F%BA%E9%87%91"><span class="nav-text">美股指数基金</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E8%B4%A8%E7%BE%8E%E8%82%A1"><span class="nav-text">优质美股</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E5%88%86%E7%BA%A2%E6%B8%AF%E8%82%A1"><span class="nav-text">高分红港股</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E7%9A%84%E8%82%A1%E4%BB%BD%E3%80%81%E8%82%A1%E7%A5%A8%E6%8C%87%E6%95%B0-%E2%80%94%E2%80%94-%E4%B8%8D%E6%87%82%E4%B8%8D%E8%A6%81%E7%A2%B0"><span class="nav-text">其他的股份、股票指数 —— 不懂不要碰</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%8E%E5%9B%BD%E5%9B%BD%E5%80%BA-%EF%BC%885-%EF%BC%89"><span class="nav-text">美国国债 （5%）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%9B%BD%E5%80%BA%E3%80%81%E5%9C%B0%E6%96%B9%E5%80%BA-%EF%BC%88%E9%9B%B6%E9%A3%8E%E9%99%A9%EF%BC%89"><span class="nav-text">中国国债、地方债 （零风险）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E5%9B%BD%E5%95%86%E5%93%81%E6%88%BF"><span class="nav-text">中国商品房</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%9B%BD%E5%AE%B6%E4%B8%8A%E5%95%86%E5%93%81%E6%88%BF%EF%BC%88%E5%A2%9E%E5%80%BC%E3%80%81%E5%87%BA%E7%A7%9F%EF%BC%89"><span class="nav-text">其他国家上商品房（增值、出租）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%95%E8%B5%84%E4%BD%A0%E6%87%82%E7%9A%84%E9%A2%86%E5%9F%9F%E5%92%8C%E8%A1%8C%E4%B8%9A%EF%BC%9A%E9%A4%90%E9%A5%AE%E3%80%81%E6%B6%88%E8%B4%B9%E3%80%81%E5%AE%9E%E4%BD%93%E7%BB%8F%E6%B5%8E"><span class="nav-text">投资你懂的领域和行业：餐饮、消费、实体经济</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%8A%95%E8%B5%84%E5%93%81"><span class="nav-text">特殊投资品</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-text">结语</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2026&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">sudo0m</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        共撰写了 27 篇文章
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">访问人数</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">总访问量</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">由 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a> 驱动</span>
+            <span class="text-sm lg:block">主题&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.5</a></span>
+        </div>
+        
+        
+            <div>
+                博客已运行 <span class="odometer" id="runtime_days" ></span> 天 <span class="odometer" id="runtime_hours"></span> 小时 <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span> 秒
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="站内搜索您需要的内容..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>
